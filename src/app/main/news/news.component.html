@@ -1,0 +1,14 @@
+<button mat-raised-button>Basic</button>
+<button mat-button color="primary">Primary</button>
+<button mat-button color="accent">Accent</button>
+<button mat-button color="warn">Warn</button>
+<button mat-button disabled>Disabled</button>
+<a mat-button href="https://www.google.com/" target="_blank">Link</a>
+
+<mat-form-field class="example-form-field">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <form [formGroup]="signinForm" (ngSubmit)="xyLyDangNhap()">
+                <div class="form-group">
+                    <label>Tài khoản</label>
+                    <input type="text" id="taiKhoan" class="form-control" formControlName="taiKhoan">
+                    <div *ngIf="signinForm.get('taiKhoan').invalid&&(signinForm.get('taiKhoan').dirty||signinForm.get('taiKhoan').touched)"
+                        class="alert alert-danger">
+                        <span *ngIf="signinForm.get('taiKhoan').errors.required">Tài khoản không dc để trống</span>
+                        <span
+                            *ngIf="signinForm.get('taiKhoan').errors.minlength ||signinForm.get('taiKhoan').errors.maxlength">Tài
+                            khoản không dc để trống</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="matKhau" class="form-control" formControlName="matKhau">
+                    <div *ngIf="signinForm.get('matKhau').invalid&&(signinForm.get('matKhau').dirty||signinForm.get('matKhau').touched)"
+                        class="alert alert-danger">
+                        <span *ngIf="signinForm.get('matKhau').errors.required">Mật khẩu không dc để trống</span>
+                        <span *ngIf="signinForm.get('matKhau').errors.pattern">
+                            mật khẩu sai định dạng
+                        </span>
+                    </div>
+                </div>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
